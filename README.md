@@ -15,11 +15,23 @@ https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes.json
 ## 我想发布自己的主题
 
 1. 管理器 →「主题」→「主题编辑器」：基于当前外观改配色/背景/玻璃参数，填好名字与作者，**保存**；
-2. 同一个页面点「导出主题包」，得到 `你的主题.xectheme`；想直接分享就用「导出并发布」，
-   它会把包传到 XEC 网盘并给你一条直链；
-3. 到 [提交主题](https://github.com/byBOOK10086/XECKernelPro-Themes/issues/new?template=upload-theme.yml)
-   填那条直链；
-4. 机器人校验通过后会把它收进 `themes/<id>/`、重建索引并关掉 issue。管理器刷新即可看到。
+2. 然后走**任意一条**路都行：
+
+**A. 一键发布（推荐，不需要 GitHub 账号）**
+
+在管理器「主题商城」页顶部点「发布我的主题」→ 选一个主题 → 它会被传到 XEC 网盘的
+`/uploads/pending/`。本仓库的定时任务（`ingest-pending.yml`，每 10 分钟一轮）会扫那个目录，
+校验、按 sha256 去重后自动收进 `themes/<id>/`、重建索引。管理器刷新商城即可看到。
+
+**B. 开 issue 提交（想留言/要回执时用）**
+
+把包传到任何能公网下载的地方（管理器里的「发布」也会给你一条直链），到
+[提交主题](https://github.com/byBOOK10086/XECKernelPro-Themes/issues/new?template=upload-theme.yml)
+填那条直链；机器人校验通过后会收进 `themes/<id>/`、重建索引并回帖关掉 issue。
+
+两条路走的是**同一份收货代码**（`scripts/accept_theme.py` 的 `store_theme`），所以校验规则不会有差别。
+已看过的上传（含被拒的）记在 `pending-seen.json` 里，避免每轮重新下载；被拒的包不会被收进仓库，
+修好后用新文件名重新上传即可。
 
 想自己托管也行：在 `sources.json` 里加一条 `{"id": "...", "url": "https://…/x.xectheme"}`（或开 issue 说明），
 索引每 6 小时会自动跟进。
