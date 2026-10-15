@@ -153,7 +153,9 @@ def load_json(name, default):
     path = ROOT / name
     if not path.is_file():
         return default
-    return json.loads(path.read_text(encoding='utf-8'))
+    # utf-8-sig：Windows 上用记事本/PowerShell 存过的 JSON 会带 BOM，直接 json.loads 会炸在
+    # 第一个字符上（第一次部署就踩了这一下）。BOM 对 JSON 没有意义，读的时候吃掉它。
+    return json.loads(path.read_text(encoding='utf-8-sig'))
 
 
 def git_last_commit_time(rel):
