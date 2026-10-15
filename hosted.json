@@ -1,6 +1,13 @@
 {
   "themes": [
     {
+      "id": "my-theme",
+      "path": "themes/my-theme/my-theme-1792090074.xectheme",
+      "versionCode": 1792090074,
+      "sha256": "479ad57da80da1a230fd3d60562fd28ab03dc0cf49f1fd1af2748f2652c899f5",
+      "size": 363
+    },
+    {
       "id": "xecpro-astra",
       "path": "themes/xecpro-astra/xecpro-astra-1.xectheme",
       "versionCode": 1,

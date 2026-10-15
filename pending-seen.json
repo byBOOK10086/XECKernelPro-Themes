@@ -55,7 +55,28 @@
       "size": 489,
       "status": "accepted",
       "themeId": "xecpro-astra"
+    },
+    "1792090103582_my-theme-1792090074.xectheme": {
+      "at": 1792100889,
+      "sha256": "eb21c2b06165dfeebc2c9047fdc55147895a62e66b2286cb27305dd773feabf8",
+      "size": 376,
+      "status": "accepted",
+      "themeId": "my-theme"
+    },
+    "1792090509050_my-theme-1792090074.xectheme": {
+      "at": 1792100891,
+      "sha256": "eee5984b1c692279b226cc80c19e03c3f95ab0098649757c121e18a7317f1d96",
+      "size": 363,
+      "status": "accepted",
+      "themeId": "my-theme"
+    },
+    "1792090518115_my-theme-1792090074.xectheme": {
+      "at": 1792100893,
+      "sha256": "479ad57da80da1a230fd3d60562fd28ab03dc0cf49f1fd1af2748f2652c899f5",
+      "size": 363,
+      "status": "accepted",
+      "themeId": "my-theme"
     }
   },
-  "updatedAt": 1792089549
+  "updatedAt": 1792100893
 }
