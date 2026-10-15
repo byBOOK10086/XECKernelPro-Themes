@@ -1,3 +1,11 @@
 {
-  "themes": []
+  "themes": [
+    {
+      "id": "xecpro-aurora",
+      "path": "themes/xecpro-aurora/xecpro-aurora-1.xectheme",
+      "versionCode": 1,
+      "sha256": "8bba21976da6f7d24fcd6792acbe1113cd49a5c7a005eaec076a31543b9d0aba",
+      "size": 1095
+    }
+  ]
 }
