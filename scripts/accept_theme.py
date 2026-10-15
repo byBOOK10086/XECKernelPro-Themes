@@ -130,7 +130,8 @@ def update_hosted(theme_id, rel, version_code, sha, size):
     themes = [t for t in hosted.get('themes', []) if t.get('id') != theme_id]
     themes.append(entry)
     hosted['themes'] = sorted(themes, key=lambda t: t['id'])
-    hosted_path.write_text(json.dumps(hosted, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (ROOT / 'hosted.json').write_text(
+        json.dumps(hosted, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print('hosted.json updated')
 
 
