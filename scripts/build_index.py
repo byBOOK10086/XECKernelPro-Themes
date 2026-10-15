@@ -128,24 +128,28 @@ def read_theme_json(blob):
 
 
 def accent_of(meta):
-    """从 theme.json 里挑出商店卡片要用的三个颜色（缺就返回空串）。"""
+    """从 theme.json 里挑出商店卡片要用的三个颜色（缺就返回空串）。
+
+    深/浅两档要各取各的 `backdrop`：写成一个 pick() 会让浅色档拿到深色档的底色，
+    商店卡片的预览色块就永远是一块黑（第一次部署就是这么错的）。
+    """
     colors = meta.get('colors') or {}
     dark = colors.get('dark') if isinstance(colors.get('dark'), dict) else {}
     light = colors.get('light') if isinstance(colors.get('light'), dict) else {}
     flat = {k: v for k, v in colors.items() if isinstance(v, str)}
 
-    def pick(*keys):
-        for source in (dark, light, flat, colors):
-            for key in keys:
-                value = source.get(key) if isinstance(source, dict) else None
-                if isinstance(value, str) and value.startswith('#'):
-                    return value
+    def first(source, *keys):
+        for key in keys:
+            value = source.get(key) if isinstance(source, dict) else None
+            if isinstance(value, str) and value.startswith('#'):
+                return value
         return ''
 
     return {
-        'accent': pick('accent'),
-        'backdropDark': pick('backdrop'),
-        'backdropLight': pick('backdrop'),
+        'accent': (first(dark, 'accent') or first(light, 'accent')
+                   or first(flat, 'accent') or first(colors, 'accent')),
+        'backdropDark': first(dark, 'backdrop') or first(flat, 'backdropDark'),
+        'backdropLight': first(light, 'backdrop') or first(flat, 'backdropLight'),
     }
 
 
