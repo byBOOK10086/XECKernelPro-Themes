@@ -127,17 +127,89 @@ def tiny_jpeg(w, h, rgb):
     return bytes(out)
 
 
+def write_package(theme, outdir, rgb):
+    """把一份主题 dict 打成 `<id>-<versionCode>.xectheme` + 同名 .preview.jpg。"""
+    stem = '%s-%d' % (theme['id'], theme['versionCode'])
+    preview = tiny_jpeg(320, 180, rgb)
+    pkg = outdir / (stem + '.xectheme')
+    with zipfile.ZipFile(pkg, 'w', zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr('theme.json', json.dumps(theme, ensure_ascii=False, indent=2))
+        zf.writestr('preview.jpg', preview)
+    (outdir / (stem + '.preview.jpg')).write_bytes(preview)
+    print('wrote %s (%d bytes)' % (pkg, pkg.stat().st_size))
+    return pkg
+
+
+# 第二份示例（紫罗兰）。存在的理由有两个：
+#  1) 商城只有一条主题时看不出列表长什么样；
+#  2) 主题仓库的"自动收录"（ingest_pending.py）需要**真实的第二个包**跑一遍才敢说通了。
+VIOLET = {
+    'schema': 1,
+    'id': 'xecpro-violet',
+    'name': '紫罗兰示例主题',
+    'author': 'XECKernelPro',
+    'version': '1.0',
+    'versionCode': 1,
+    'summary': '示例主题之二：暗紫打底 + 亮紫强调色，用来演示"同一套令牌换一组值就是另一套皮肤"。',
+    'description': (
+        '与极光示例同结构，只换了令牌取值：\n'
+        '· 暗色：深紫黑底 + 亮紫强调；\n'
+        '· 亮色：淡紫白底 + 深紫强调；\n'
+        '· 圆角更小、玻璃更实（tintAlpha 偏高）。\n'
+        '想改自己的主题，用管理器「主题编辑器」改完导出即可。'
+    ),
+    'createdAt': '2026-10-15T00:00:00Z',
+    'colors': {
+        'dark': {
+            'backdrop': '#0B0714',
+            'backdropScrim': '#CC0B0714',
+            'surface': '#161028',
+            'surfaceMuted': '#1F1735',
+            'glassTint': '#8C161028',
+            'glassRim': '#3A2C5E',
+            'text': '#F0E9FF',
+            'textSecondary': '#C6B8E8',
+            'textMuted': '#8E7FB5',
+            'accent': '#B98CFF',
+            'accentSoft': '#241A3D',
+            'water': '#6BB98CFF',
+        },
+        'light': {
+            'backdrop': '#F7F4FF',
+            'backdropScrim': '#E6F7F4FF',
+            'surface': '#FFFFFF',
+            'surfaceMuted': '#EFE9FB',
+            'glassTint': '#8CFFFFFF',
+            'glassRim': '#DCD2F2',
+            'text': '#170F2B',
+            'textSecondary': '#4B3D6B',
+            'textMuted': '#75679A',
+            'accent': '#6D3FD1',
+            'accentSoft': '#EBE2FF',
+            'water': '#6B6D3FD1',
+        },
+    },
+    'shapes': {'sm': 8, 'md': 13, 'lg': 18, 'xl': 24},
+    'glass': {'tintAlpha': 0.7, 'refraction': 0.85, 'blurRadius': 1.15},
+    'background': {},
+}
+
+
 def main():
     outdir = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else 'samples')
     outdir.mkdir(parents=True, exist_ok=True)
-    preview = tiny_jpeg(320, 180, (0x0A, 0x1A, 0x15))
-    pkg = outdir / 'xecpro-aurora-1.xectheme'
-    with zipfile.ZipFile(pkg, 'w', zipfile.ZIP_DEFLATED) as zf:
-        zf.writestr('theme.json', json.dumps(THEME, ensure_ascii=False, indent=2))
-        zf.writestr('preview.jpg', preview)
-    (outdir / 'xecpro-aurora-1.preview.jpg').write_bytes(preview)
-    print('wrote %s (%d bytes)' % (pkg, pkg.stat().st_size))
-    print('wrote %s' % (outdir / 'xecpro-aurora-1.preview.jpg'))
+    aurora = outdir / 'xecpro-aurora-1.xectheme'
+    if aurora.exists():
+        # 不重新生成极光：它的字节已经被索引里的 sha256 钉住了（重新打包会换掉 zip 时间戳）。
+        print('keep existing %s (%d bytes)' % (aurora, aurora.stat().st_size))
+    else:
+        preview = tiny_jpeg(320, 180, (0x0A, 0x1A, 0x15))
+        with zipfile.ZipFile(aurora, 'w', zipfile.ZIP_DEFLATED) as zf:
+            zf.writestr('theme.json', json.dumps(THEME, ensure_ascii=False, indent=2))
+            zf.writestr('preview.jpg', preview)
+        (outdir / 'xecpro-aurora-1.preview.jpg').write_bytes(preview)
+        print('wrote %s (%d bytes)' % (aurora, aurora.stat().st_size))
+    write_package(VIOLET, outdir, (0x16, 0x10, 0x28))
 
 
 if __name__ == '__main__':
