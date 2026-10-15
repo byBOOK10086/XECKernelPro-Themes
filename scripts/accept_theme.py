@@ -117,8 +117,9 @@ def extract_preview(blob, rel, theme_id):
 
 
 def update_hosted(theme_id, rel, version_code, sha, size):
-    hosted_path = ROOT / 'hosted.json'
-    hosted = load_json(hosted_path) or {'themes': []}
+    # load_json 收的是**相对仓库根的文件名** + 默认值（不是路径）——ingest_pending 第一次跑
+    # 就因为这里传了 Path 而 TypeError（2026-10-15 的 run 38752304428）。
+    hosted = load_json('hosted.json', {'themes': []})
     entry = {
         'id': theme_id,
         'path': rel,
