@@ -179,7 +179,13 @@ def jsdelivr(path):
 
 def entry_from_hosted(item):
     rel = item['path']
-    blob = download(jsdelivr(rel))
+    # 读**本地工作树**里的包，而不是回头去 jsDelivr 下载：刚 push 上去的文件 CDN 还没缓存，
+    # 下载会 404/拿到旧内容，索引就会把刚收下的主题整条跳过（第一次部署就踩了）。
+    local = ROOT / rel
+    if local.is_file():
+        blob = local.read_bytes()
+    else:
+        blob = download(jsdelivr(rel))
     meta, _names = read_theme_json(blob)
     digest = hashlib.sha256(blob).hexdigest()
     if item.get('sha256') and item['sha256'] != digest:
