@@ -10,14 +10,14 @@
     "schema": 1,
     "size": 1095,
     "sha256": "8bba21976da6f7d24fcd6792acbe1113cd49a5c7a005eaec076a31543b9d0aba",
-    "updatedAt": "2026-10-15T12:55:43Z",
+    "updatedAt": "2026-10-15T12:57:05Z",
     "createdAt": "2026-10-15T00:00:00Z",
     "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.xectheme",
     "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg",
     "colors": {
       "accent": "#2BE3A4",
       "backdropDark": "#04100C",
-      "backdropLight": "#04100C"
+      "backdropLight": "#F1F7F5"
     }
   }
 ]
