@@ -38,14 +38,33 @@ https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes.json
 
 ## 主题包格式（`.xectheme`）
 
-就是一个 zip，根目录放 `theme.json`（必需），可选放背景图与预览图：
+就是一个 zip，根目录放 `theme.json`（必需），可选放背景图、**区块背景图**与预览图：
 
 ```
 theme.json
 background-dark.jpg     # 可选，深色档背景
 background-light.jpg    # 可选，浅色档背景
+block-home-status.jpg   # 可选，首页某张卡片的背景（见下「区块背景」）
 preview.jpg             # 可选，商店卡片预览（≤2MB，会被单独抽出来）
 ```
+
+**区块背景（`blocks`，2026-10-15 起）**：给首页每张卡片单独设背景（颜色/图片/透明度/压暗），
+不写就完全不动那一页。目前支持六个 id：`home.status`、`home.update`、`home.warning`、
+`home.privilege`、`home.support`、`home.info`。
+
+```json
+"blocks": {
+  "home.status": {
+    "color": "#AARRGGBB",              // 可选，可写 #RRGGBB（会自动补成不透明）
+    "image": "block-home-status.jpg",  // 可选，zip 里的条目名（约定 block-<id 里的点换成横线>.jpg）
+    "opacity": 1.0,                    // 0~1，整块（颜色+图）的不透明度
+    "dim": 0.25,                       // 0~1，图上的黑色压暗，保证卡片文字可读
+    "when": "both"                     // both | dark | light
+  }
+}
+```
+
+认不出的区块 id / 字段会被**安静忽略**（老管理器装新主题不报错，只是一块背景不生效）。
 
 `theme.json`（`schema` 必须是 `1`）：
 
