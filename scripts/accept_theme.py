@@ -144,7 +144,7 @@ def main():
         print('preview extraction failed: %s' % exc)
 
     hosted_path = ROOT / 'hosted.json'
-    hosted = json.loads(hosted_path.read_text(encoding='utf-8')) if hosted_path.is_file() else {'themes': []}
+    hosted = json.loads(hosted_path.read_text(encoding='utf-8-sig')) if hosted_path.is_file() else {'themes': []}
     entry = {
         'id': theme_id,
         'path': rel,
