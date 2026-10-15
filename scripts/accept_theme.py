@@ -97,6 +97,67 @@ def put_contents(path, blob, message):
     api(url_path, 'PUT', payload)
 
 
+def extract_preview(blob, rel, theme_id):
+    """把包里的 preview.jpg 单独抽一份出来：商店卡片只拉这张小图，不用下整个包。"""
+    try:
+        zf = zipfile.ZipFile(io.BytesIO(blob))
+        for name in zf.namelist():
+            if name.lower() in PREVIEW_NAMES:
+                data = zf.read(name)
+                if len(data) > 2 * 1024 * 1024:
+                    print('preview too large (%d bytes), skipped' % len(data))
+                    return ''
+                preview_rel = rel.rsplit('.', 1)[0] + '.preview.jpg'
+                put_contents(preview_rel, data, 'theme preview: %s' % theme_id)
+                print('stored preview %s (%d bytes)' % (preview_rel, len(data)))
+                return preview_rel
+    except Exception as exc:                                           # noqa: BLE001
+        print('preview extraction failed: %s' % exc)
+    return ''
+
+
+def update_hosted(theme_id, rel, version_code, sha, size):
+    hosted_path = ROOT / 'hosted.json'
+    hosted = load_json(hosted_path) or {'themes': []}
+    entry = {
+        'id': theme_id,
+        'path': rel,
+        'versionCode': version_code,
+        'sha256': sha,
+        'size': size,
+    }
+    themes = [t for t in hosted.get('themes', []) if t.get('id') != theme_id]
+    themes.append(entry)
+    hosted['themes'] = sorted(themes, key=lambda t: t['id'])
+    hosted_path.write_text(json.dumps(hosted, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print('hosted.json updated')
+
+
+def store_theme(blob, expect_id=''):
+    """校验并落盘一个主题包 —— **收货的唯一代码路径**。
+
+    两条入口都走这里：issue 表单（accept_theme.main）与定时扫描网盘
+    （ingest_pending.main）。只有一处实现，格式规则就不可能两边跑偏。
+
+    返回 (theme_id, meta, rel, preview_rel)；包不合规（或 id 与调用方声明的不一致）
+    抛 ValueError，调用方负责决定"回帖说原因"还是"只记一笔"。
+    """
+    meta, names = read_theme_json(blob)
+    theme_id = str(meta['id'])
+    if expect_id and expect_id != theme_id:
+        raise ValueError('issue 里写的 ID（%s）与 theme.json 里的 id（%s）不一致'
+                         % (expect_id, theme_id))
+    version_code = int(meta['versionCode'])
+    version = str(meta['version'])
+    sha = hashlib.sha256(blob).hexdigest()
+    rel = 'themes/%s/%s-%d.xectheme' % (theme_id, theme_id, version_code)
+    put_contents(rel, blob, 'theme: %s v%s (versionCode %d)' % (theme_id, version, version_code))
+    print('stored %s (%d bytes, sha256 %s, files: %s)' % (rel, len(blob), sha[:12], '、'.join(names[:12])))
+    preview_rel = extract_preview(blob, rel, theme_id)
+    update_hosted(theme_id, rel, version_code, sha, len(blob))
+    return theme_id, meta, rel, preview_rel
+
+
 def main():
     fields = parse_issue_body(os.environ.get('ISSUE_BODY', ''))
     url = (os.environ.get('INPUT_URL') or pick(fields, '直链', 'url', 'URL', '链接')).strip()
@@ -111,52 +172,12 @@ def main():
         return fail('直链下载失败：%s' % exc)
 
     try:
-        meta, names = read_theme_json(blob)
+        theme_id, meta, rel, _preview = store_theme(blob, expect_id=wanted_id)
     except ValueError as exc:
         return fail(str(exc))
-
-    theme_id = str(meta['id'])
-    if wanted_id and wanted_id != theme_id:
-        return fail('issue 里写的 ID（%s）与 theme.json 里的 id（%s）不一致' % (wanted_id, theme_id))
     version_code = int(meta['versionCode'])
     version = str(meta['version'])
-    sha = hashlib.sha256(blob).hexdigest()
-
-    rel = 'themes/%s/%s-%d.xectheme' % (theme_id, theme_id, version_code)
-    put_contents(rel, blob, 'theme: %s v%s (versionCode %d)' % (theme_id, version, version_code))
-    print('stored %s (%d bytes, sha256 %s)' % (rel, len(blob), sha[:12]))
-
-    # 预览图单独抽一份出来：商店卡片只拉这一张小图，不用为了预览下载整个包。
-    preview_rel = ''
-    try:
-        zf = zipfile.ZipFile(io.BytesIO(blob))
-        for name in zf.namelist():
-            if name.lower() in PREVIEW_NAMES:
-                data = zf.read(name)
-                if len(data) > 2 * 1024 * 1024:
-                    print('preview too large (%d bytes), skipped' % len(data))
-                    break
-                preview_rel = rel.rsplit('.', 1)[0] + '.preview.jpg'
-                put_contents(preview_rel, data, 'theme preview: %s' % theme_id)
-                print('stored preview %s (%d bytes)' % (preview_rel, len(data)))
-                break
-    except Exception as exc:                                       # noqa: BLE001
-        print('preview extraction failed: %s' % exc)
-
-    hosted_path = ROOT / 'hosted.json'
-    hosted = json.loads(hosted_path.read_text(encoding='utf-8-sig')) if hosted_path.is_file() else {'themes': []}
-    entry = {
-        'id': theme_id,
-        'path': rel,
-        'versionCode': version_code,
-        'sha256': sha,
-        'size': len(blob),
-    }
-    themes = [t for t in hosted.get('themes', []) if t.get('id') != theme_id]
-    themes.append(entry)
-    hosted['themes'] = sorted(themes, key=lambda t: t['id'])
-    hosted_path.write_text(json.dumps(hosted, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print('hosted.json updated')
+    names = list(zipfile.ZipFile(io.BytesIO(blob)).namelist())
 
     import subprocess
     subprocess.check_call([sys.executable, str(ROOT / 'scripts' / 'build_index.py')])
