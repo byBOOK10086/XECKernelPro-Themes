@@ -1,0 +1,53 @@
+name: Ingest pending themes
+
+# 管理器「发布」把主题包传进 XEC 网盘的 /uploads/pending/，这里定时扫那个目录自动收录。
+# 存在的理由：原来的路要用户去 GitHub 开 issue 填直链，国内手机上 github.com 经常打不开，
+# 结果就是"上传了但商城一直没有"。这条路完全不需要 GitHub 账号。
+# issue 表单那条路仍然保留（accept-theme.yml），想留言/要回执时用。
+on:
+  schedule:
+    # 每 10 分钟一轮（GitHub 的 cron 最短间隔是 5 分钟，但排队的定时任务会被延迟，
+    # 10 分钟更适合"上传完顺手刷新一下商城"这个节奏）。
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 和 issue 收货那条 workflow 抢同一个仓库：串行，别让两个 run 同时 push。
+concurrency:
+  group: theme-repo-write
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Scan and accept pending uploads
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/ingest_pending.py
+
+      - name: Commit new themes
+        run: |
+          if git diff --quiet -- pending-seen.json sources.json hosted.json themes.json themes/; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git config user.name "xecpro-themebot"
+          git config user.email "bot@users.noreply.github.com"
+          git add pending-seen.json sources.json hosted.json themes.json themes/
+          git commit -m "repo: ingest pending theme uploads"
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "push raced with another writer, retry $i"
+            sleep 6
+          done
+          exit 1
+
+      - name: Purge jsDelivr cache
+        # 不清缓存的话 CDN 会拿旧的 themes.json 顶 12 小时，管理器看到的就一直是老列表。
+        run: |
+          curl -sS -m 30 "https://purge.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes.json" || true
