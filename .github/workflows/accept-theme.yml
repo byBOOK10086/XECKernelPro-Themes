@@ -1,0 +1,59 @@
+name: Accept theme upload
+
+# 用户在管理器里「导出并发布」→ 上传到 XEC 网盘 → 开 issue 提交直链
+# （表单见 .github/ISSUE_TEMPLATE/upload-theme.yml），或维护者手动 workflow_dispatch。
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      url:
+        description: '.xectheme 直链'
+        required: true
+      id:
+        description: '主题 ID（留空则读 theme.json）'
+        required: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  accept:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      contains(join(github.event.issue.labels.*.name, ','), 'theme-submission')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Validate and accept
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          INPUT_URL: ${{ inputs.url }}
+          INPUT_ID: ${{ inputs.id }}
+        run: python3 scripts/accept_theme.py
+
+      - name: Commit index changes
+        run: |
+          if git diff --quiet -- sources.json hosted.json themes.json themes/; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git config user.name "xecpro-themebot"
+          git config user.email "bot@users.noreply.github.com"
+          git add sources.json hosted.json themes.json themes/
+          git commit -m "repo: accept theme submission"
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "push raced with another writer, retry $i"
+            sleep 6
+          done
+          exit 1
+
+      - name: Purge jsDelivr cache
+        # 不清缓存的话 CDN 会拿旧的 themes.json 顶 12 小时，管理器看到的就一直是老列表。
+        run: |
+          curl -sS -m 30 "https://purge.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes.json" || true
