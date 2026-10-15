@@ -10,7 +10,7 @@
     "schema": 1,
     "size": 1143,
     "sha256": "1c852b946f729148ae7b173d77dd1b35413b3bfd6ae5b4654f898a90e9cf16fd",
-    "updatedAt": "2026-10-15T14:35:56Z",
+    "updatedAt": "2026-10-15T16:46:45Z",
     "createdAt": "2026-10-15T00:00:00Z",
     "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-violet/xecpro-violet-1.xectheme",
     "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-violet/xecpro-violet-1.preview.jpg",
@@ -21,24 +21,24 @@
     }
   },
   {
-    "themeId": "xecpro-aurora",
-    "name": "极光示例主题",
+    "themeId": "xecpro-astra",
+    "name": "测试主题展示",
     "author": "XECKernelPro",
     "version": "1.0",
     "versionCode": 1,
-    "description": "这是主题仓库自带的示例主题，可以直接照这个结构改成你自己的：\n1) 在管理器「主题编辑器」里改配色/背景，保存；\n2) 导出 .xectheme；\n3) 到主题仓库开 issue 提交直链。",
-    "summary": "示例/模板主题：青绿极光配色，用来验证主题商城与换肤链路是通的。",
+    "description": "测试专用",
+    "summary": "测试专用 测试专用",
     "schema": 1,
-    "size": 1095,
-    "sha256": "8bba21976da6f7d24fcd6792acbe1113cd49a5c7a005eaec076a31543b9d0aba",
-    "updatedAt": "2026-10-15T14:35:56Z",
+    "size": 489,
+    "sha256": "17a7475171f09bfbb338da1bfd7bbea64316b970e4ba743d323a5d66c2932a95",
+    "updatedAt": "",
     "createdAt": "2026-10-15T00:00:00Z",
-    "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.xectheme",
-    "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg",
+    "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-astra/xecpro-astra-1.xectheme",
+    "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-astra/xecpro-astra-1.preview.jpg",
     "colors": {
-      "accent": "#2BE3A4",
-      "backdropDark": "#04100C",
-      "backdropLight": "#F1F7F5"
+      "accent": "",
+      "backdropDark": "",
+      "backdropLight": ""
     }
   }
 ]

@@ -13,7 +13,49 @@
       "size": 1143,
       "status": "accepted",
       "themeId": "xecpro-violet"
+    },
+    "1792087365621_xecpro-aurora-1.xectheme": {
+      "at": 1792089536,
+      "sha256": "db1aed6b05837914276e744939a70f1c0213360ca5a04898522431a187beb6ed",
+      "size": 1120,
+      "status": "accepted",
+      "themeId": "xecpro-aurora"
+    },
+    "1792087396995_xecpro-aurora-1.xectheme": {
+      "at": 1792089540,
+      "sha256": "9b59d59ad947de3f249c2797bfa5eefce8e969c22a616701cc22910e74e525eb",
+      "size": 1120,
+      "status": "accepted",
+      "themeId": "xecpro-aurora"
+    },
+    "1792087439237_xecpro-aurora-1.xectheme": {
+      "at": 1792089543,
+      "sha256": "c372a5665a3dee6d2496f594f7332b8d27fc61c3052884339e616b20175b92dd",
+      "size": 1120,
+      "status": "accepted",
+      "themeId": "xecpro-aurora"
+    },
+    "1792087620024_xecpro-astra-1.xectheme": {
+      "at": 1792089545,
+      "sha256": "c39fcbf3da77742641d1708c58812f2d79970e0a00c92685ed7fe2d823900475",
+      "size": 489,
+      "status": "accepted",
+      "themeId": "xecpro-astra"
+    },
+    "1792087633842_xecpro-astra-1.xectheme": {
+      "at": 1792089547,
+      "sha256": "4465707beb7cd3bcc8e66d350db98106df423664592b1a7ff0fcc6c25041633f",
+      "size": 489,
+      "status": "accepted",
+      "themeId": "xecpro-astra"
+    },
+    "1792087657545_xecpro-astra-1.xectheme": {
+      "at": 1792089549,
+      "sha256": "17a7475171f09bfbb338da1bfd7bbea64316b970e4ba743d323a5d66c2932a95",
+      "size": 489,
+      "status": "accepted",
+      "themeId": "xecpro-astra"
     }
   },
-  "updatedAt": 1792074971
+  "updatedAt": 1792089549
 }

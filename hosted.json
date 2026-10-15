@@ -1,11 +1,18 @@
 {
   "themes": [
     {
+      "id": "xecpro-astra",
+      "path": "themes/xecpro-astra/xecpro-astra-1.xectheme",
+      "versionCode": 1,
+      "sha256": "17a7475171f09bfbb338da1bfd7bbea64316b970e4ba743d323a5d66c2932a95",
+      "size": 489
+    },
+    {
       "id": "xecpro-aurora",
       "path": "themes/xecpro-aurora/xecpro-aurora-1.xectheme",
       "versionCode": 1,
-      "sha256": "8bba21976da6f7d24fcd6792acbe1113cd49a5c7a005eaec076a31543b9d0aba",
-      "size": 1095
+      "sha256": "c372a5665a3dee6d2496f594f7332b8d27fc61c3052884339e616b20175b92dd",
+      "size": 1120
     },
     {
       "id": "xecpro-violet",
