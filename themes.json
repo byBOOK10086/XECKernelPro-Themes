@@ -1,5 +1,26 @@
 [
   {
+    "themeId": "xecpro-violet",
+    "name": "紫罗兰示例主题",
+    "author": "XECKernelPro",
+    "version": "1.0",
+    "versionCode": 1,
+    "description": "与极光示例同结构，只换了令牌取值：\n· 暗色：深紫黑底 + 亮紫强调；\n· 亮色：淡紫白底 + 深紫强调；\n· 圆角更小、玻璃更实（tintAlpha 偏高）。\n想改自己的主题，用管理器「主题编辑器」改完导出即可。",
+    "summary": "示例主题之二：暗紫打底 + 亮紫强调色，用来演示\"同一套令牌换一组值就是另一套皮肤\"。",
+    "schema": 1,
+    "size": 1143,
+    "sha256": "1c852b946f729148ae7b173d77dd1b35413b3bfd6ae5b4654f898a90e9cf16fd",
+    "updatedAt": "2026-10-15T14:35:56Z",
+    "createdAt": "2026-10-15T00:00:00Z",
+    "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-violet/xecpro-violet-1.xectheme",
+    "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-violet/xecpro-violet-1.preview.jpg",
+    "colors": {
+      "accent": "#B98CFF",
+      "backdropDark": "#0B0714",
+      "backdropLight": "#F7F4FF"
+    }
+  },
+  {
     "themeId": "xecpro-aurora",
     "name": "极光示例主题",
     "author": "XECKernelPro",
@@ -10,7 +31,7 @@
     "schema": 1,
     "size": 1095,
     "sha256": "8bba21976da6f7d24fcd6792acbe1113cd49a5c7a005eaec076a31543b9d0aba",
-    "updatedAt": "2026-10-15T12:57:05Z",
+    "updatedAt": "2026-10-15T14:35:56Z",
     "createdAt": "2026-10-15T00:00:00Z",
     "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.xectheme",
     "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg",

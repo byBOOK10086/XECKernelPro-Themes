@@ -1,0 +1,19 @@
+{
+  "seen": {
+    "1792073996986_probe-pending.xectheme": {
+      "at": 1792074967,
+      "note": "不是 zip：File is not a zip file",
+      "sha256": "ba9c736f19e7f60b7f6764adb0b7908c0a2b394e09b6c09863528c7f2bc86095",
+      "size": 5,
+      "status": "rejected"
+    },
+    "1792074546711_xecpro-violet-1.xectheme": {
+      "at": 1792074971,
+      "sha256": "1c852b946f729148ae7b173d77dd1b35413b3bfd6ae5b4654f898a90e9cf16fd",
+      "size": 1143,
+      "status": "accepted",
+      "themeId": "xecpro-violet"
+    }
+  },
+  "updatedAt": 1792074971
+}
