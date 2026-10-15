@@ -1,0 +1,38 @@
+name: 提交主题
+description: 把你自己做的 XEC 主题包（.xectheme）提交到主题商城
+title: "[主题] "
+labels: ["theme-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢分享主题！填之前请确认：
+
+        * 包是管理器里「主题编辑器 → 导出主题包」生成的 **.xectheme**（就是一个 zip，里面有 `theme.json`）；
+        * 你已经把包传到了能公开下载的地方（管理器里可以直接「导出并发布」，它会传到 XEC 网盘并给你直链）；
+        * 包里**只**有主题：`theme.json` + 背景图/预览图，不要塞脚本、模块或别的可执行文件。
+
+        提交后机器人会校验，通过就自动进索引，管理器「主题商城」刷新即可看到。
+  - type: input
+    id: url
+    attributes:
+      label: 主题包直链
+      description: 必须以 .xectheme(或 .zip) 结尾，能在浏览器里直接下载
+      placeholder: https://example.com/aurora-glass-1.xectheme
+    validations:
+      required: true
+  - type: input
+    id: theme-id
+    attributes:
+      label: 主题 ID
+      description: 与 theme.json 里的 id 一致；留空就按包里的来
+      placeholder: aurora-glass
+    validations:
+      required: false
+  - type: textarea
+    id: note
+    attributes:
+      label: 补充说明（可选）
+      description: 想让大家知道的事，比如适配、配色灵感、预览图链接
+    validations:
+      required: false
