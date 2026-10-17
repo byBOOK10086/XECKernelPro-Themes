@@ -83,7 +83,14 @@
       "size": 1170,
       "status": "accepted",
       "themeId": "xecpro-violet"
+    },
+    "1792231993206_my-theme-1792090074.xectheme": {
+      "at": 1792233393,
+      "sha256": "e4ba818d1e0bff5771d17738ceb3ac44139b8b9a0986cd42bf6517c16c4975be",
+      "size": 363,
+      "status": "accepted",
+      "themeId": "my-theme"
     }
   },
-  "updatedAt": 1792217021
+  "updatedAt": 1792233393
 }
