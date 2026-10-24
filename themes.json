@@ -1,26 +1,5 @@
 [
   {
-    "themeId": "xecpro-violet",
-    "name": "紫罗兰示例主题",
-    "author": "XECKernelPro",
-    "version": "1.0",
-    "versionCode": 1,
-    "description": "与极光示例同结构，只换了令牌取值：\n· 暗色：深紫黑底 + 亮紫强调；\n· 亮色：淡紫白底 + 深紫强调；\n· 圆角更小、玻璃更实（tintAlpha 偏高）。\n想改自己的主题，用管理器「主题编辑器」改完导出即可。",
-    "summary": "示例主题之二：暗紫打底 + 亮紫强调色，用来演示\"同一套令牌换一组值就是另一套皮肤\"。",
-    "schema": 1,
-    "size": 1170,
-    "sha256": "96bb59ea39ffe5163797e85598c0234464edf26aa3401c8421b523f029bc8e3d",
-    "updatedAt": "2026-10-24T01:57:29Z",
-    "createdAt": "2026-10-15T00:00:00Z",
-    "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-violet/xecpro-violet-1.xectheme",
-    "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-violet/xecpro-violet-1.preview.jpg",
-    "colors": {
-      "accent": "#FFB98CFF",
-      "backdropDark": "#FF0B0714",
-      "backdropLight": "#FFF7F4FF"
-    }
-  },
-  {
     "themeId": "xecpro-aurora",
     "name": "极光示例主题",
     "author": "XECKernelPro",
@@ -31,7 +10,7 @@
     "schema": 1,
     "size": 1120,
     "sha256": "c372a5665a3dee6d2496f594f7332b8d27fc61c3052884339e616b20175b92dd",
-    "updatedAt": "2026-10-24T01:57:29Z",
+    "updatedAt": "2026-10-24T04:45:51Z",
     "createdAt": "2026-10-15T00:00:00Z",
     "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.xectheme",
     "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg",
@@ -52,7 +31,7 @@
     "schema": 1,
     "size": 489,
     "sha256": "17a7475171f09bfbb338da1bfd7bbea64316b970e4ba743d323a5d66c2932a95",
-    "updatedAt": "2026-10-24T01:57:29Z",
+    "updatedAt": "2026-10-24T04:45:51Z",
     "createdAt": "2026-10-15T00:00:00Z",
     "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-astra/xecpro-astra-1.xectheme",
     "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-astra/xecpro-astra-1.preview.jpg",
@@ -73,7 +52,7 @@
     "schema": 1,
     "size": 363,
     "sha256": "e4ba818d1e0bff5771d17738ceb3ac44139b8b9a0986cd42bf6517c16c4975be",
-    "updatedAt": "2026-10-24T01:57:29Z",
+    "updatedAt": "2026-10-24T04:45:51Z",
     "createdAt": "2026-10-16T02:47:54Z",
     "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/my-theme/my-theme-1792090074.xectheme",
     "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/my-theme/my-theme-1792090074.preview.jpg",
