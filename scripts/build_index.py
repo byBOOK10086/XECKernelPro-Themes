@@ -20,7 +20,10 @@
       "sha256": "…64 位…",
       "downloadUrl": "https://cdn.jsdelivr.net/gh/…/themes/<id>/<file>.xectheme",
       "previewUrl": "https://cdn.jsdelivr.net/gh/…/themes/<id>/<file>.preview.jpg",
-      "colors": {"accent": "#12B886", "backdropDark": "#0B0F10", "backdropLight": "#F2F5F6"}
+      "colors": {"accent": "#12B886", "backdropDark": "#0B0F10", "backdropLight": "#F2F5F6"},
+      "previews": ["…多张预览图直链（v2，首图=previewUrl）…"],
+      "types": ["colors" | "modeBadge"],
+      "featured": true
     }
   ]
 
@@ -102,8 +105,8 @@ def read_theme_json(blob):
         raise ValueError('theme.json 解析失败：%s' % exc)
     if not isinstance(meta, dict):
         raise ValueError('theme.json 顶层必须是对象')
-    if meta.get('schema') != 1:
-        raise ValueError('schema 必须是 1（当前：%r）' % meta.get('schema'))
+    if meta.get('schema') not in (1, 2):
+        raise ValueError('schema 必须是 1 或 2（当前：%r）' % meta.get('schema'))
     theme_id = str(meta.get('id') or '')
     if not ID_RE.match(theme_id):
         raise ValueError('id 不合法：%r（要求 ^[a-zA-Z][a-zA-Z0-9._-]{1,63}$）' % theme_id)
@@ -196,7 +199,20 @@ def entry_from_hosted(item):
         raise ValueError('%s: hosted.json 记的 sha256 与仓库里的字节不一致' % rel)
     updated = git_last_commit_time(rel) or item.get('updatedAt') or ''
     colors = accent_of(meta)
-    preview = rel.rsplit('.', 1)[0] + '.preview.jpg'
+    base = rel.rsplit('.', 1)[0]
+    preview = base + '.preview.jpg'
+    # v2 字段：previews = 主题目录里所有预览图（首图与 previewUrl 一致），
+    # types 供商城分类（模式牌主题单列一类）。
+    previews = []
+    theme_dir = ROOT / rel.rsplit('/', 1)[0]
+    if theme_dir.is_dir():
+        for img in sorted(theme_dir.glob('*.preview.jpg')):
+            previews.append(jsdelivr(str(img.relative_to(ROOT)).replace(os.sep, '/')))
+    if not previews:
+        previews = [jsdelivr(preview)]
+    badge = meta.get('modeBadge')
+    types = ['modeBadge'] if isinstance(badge, dict) and any(
+        isinstance(v, (str, dict)) and v for v in badge.values()) else ['colors']
     return {
         'themeId': meta['id'],
         'name': str(meta.get('name')),
@@ -212,6 +228,8 @@ def entry_from_hosted(item):
         'createdAt': str(meta.get('createdAt') or updated),
         'downloadUrl': jsdelivr(rel),
         'previewUrl': jsdelivr(preview),
+        'previews': previews,
+        'types': types,
         'colors': colors,
     }
 
@@ -267,7 +285,11 @@ def main():
         seen[entry['themeId']] = entry
         print('  source  %-24s v%-8s %s' % (entry['themeId'], entry['versionCode'], entry['sha256'][:12]))
 
+    # 精选位：featured.json 的 {"ids": [...]} 决定商城轮播横幅放谁（运营手工维护）。
+    featured_ids = set(load_json('featured.json', {'ids': []}).get('ids', []))
     ordered = sorted(seen.values(), key=lambda e: (e['updatedAt'] or '', e['themeId']), reverse=True)
+    for entry in ordered:
+        entry['featured'] = entry['themeId'] in featured_ids
     out = ROOT / 'themes.json'
     text = json.dumps(ordered, ensure_ascii=False, indent=2) + '\n'
     old_text = out.read_text(encoding='utf-8') if out.is_file() else ''
