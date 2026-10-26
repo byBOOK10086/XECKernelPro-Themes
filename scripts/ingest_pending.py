@@ -112,8 +112,8 @@ def main():
         keep = sorted(entries.items(), key=lambda kv: kv[1].get('at') or 0, reverse=True)[:SEEN_LIMIT]
         seen['seen'] = dict(keep)
     seen['updatedAt'] = int(time.time())
-    SEEN_PATH.write_text(json.dumps(seen, ensure_ascii=False, indent=2, sort_keys=True) + '\n',
-                         encoding='utf-8')
+    SEEN_PATH.write_bytes(
+        (json.dumps(seen, ensure_ascii=False, indent=2, sort_keys=True) + '\n').encode('utf-8'))
 
     if accepted == 0:
         print('nothing accepted this round')
