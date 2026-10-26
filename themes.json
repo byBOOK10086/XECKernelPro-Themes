@@ -1,207 +1,30 @@
-{
-  "schema": 3,
-  "generatedAt": "2026-10-26T00:00:00Z",
-  "banners": [
-    {
-      "imageUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg",
-      "themeId": "xecpro-celadon",
-      "title": "青瓷",
-      "subtitle": "XECKernelPro"
+[
+  {
+    "themeId": "xecpro-celadon",
+    "name": "青瓷",
+    "author": "XECKernelPro",
+    "version": "1.0",
+    "versionCode": 1,
+    "description": "示例主题之三。整包主题：配色 + 明暗两张背景。\n· 暗色：深青黑底 + 青瓷绿强调；\n· 亮色：瓷白底 + 墨绿强调；\n· 圆角偏小、玻璃偏实，页面看着更\"器物\"。\n想改就用管理器「主题编辑器」改完导出，商城上传即可。",
+    "summary": "青瓷示例主题：冷调青绿强调色，暗色像上釉的深青，亮色是干净的瓷白。",
+    "schema": 1,
+    "size": 1971,
+    "sha256": "40aed04e0e46c69b16ba232017b311f9eedf68234107aee24ba5b05cad6c854f",
+    "updatedAt": "",
+    "createdAt": "2026-10-26T00:00:00Z",
+    "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.xectheme",
+    "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg",
+    "previews": [
+      "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg"
+    ],
+    "types": [
+      "colors"
+    ],
+    "colors": {
+      "accent": "#4FD1A5",
+      "backdropDark": "#08120F",
+      "backdropLight": "#F3FBF8"
     },
-    {
-      "imageUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg",
-      "themeId": "xecpro-ember",
-      "title": "琥珀",
-      "subtitle": "XECKernelPro"
-    }
-  ],
-  "sections": [
-    {
-      "id": "latest",
-      "title": "最新上架",
-      "themeIds": [
-        "xecpro-celadon",
-        "xecpro-ember",
-        "xecpro-mono",
-        "xecpro-aurora"
-      ]
-    }
-  ],
-  "themes": [
-    {
-      "themeId": "xecpro-celadon",
-      "name": "青瓷",
-      "author": "XECKernelPro",
-      "version": "1.0",
-      "versionCode": 1,
-      "summary": "青瓷示例主题：冷调青绿强调色，暗色像上釉的深青，亮色是干净的瓷白。",
-      "description": "示例主题之三。整包主题：配色 + 明暗两张背景。\n· 暗色：深青黑底 + 青瓷绿强调；\n· 亮色：瓷白底 + 墨绿强调；\n· 圆角偏小、玻璃偏实，页面看着更\"器物\"。\n想改就用管理器「主题编辑器」改完导出，商城上传即可。",
-      "size": 1971,
-      "sha256": "40aed04e0e46c69b16ba232017b311f9eedf68234107aee24ba5b05cad6c854f",
-      "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.xectheme",
-      "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg",
-      "previews": [
-        "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg"
-      ],
-      "updatedAt": "2026-10-26T00:00:00Z",
-      "publishedAt": "2026-10-26T00:00:00Z",
-      "category": "theme",
-      "elements": [
-        "colors",
-        "wallpaper"
-      ],
-      "tags": [
-        "示例",
-        "冷色",
-        "低饱和"
-      ],
-      "screenshots": [],
-      "types": [
-        "colors"
-      ],
-      "featured": true,
-      "downloads": 0,
-      "rating": 0.0,
-      "ratingCount": 0,
-      "priceCents": 0,
-      "changelog": "首次上架：青瓷绿整套令牌 + 明暗双背景。",
-      "minManagerVersion": 0,
-      "bannerUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg",
-      "colors": {
-        "accent": "#4FD1A5",
-        "backdropDark": "#08120F",
-        "backdropLight": "#F3FBF8"
-      }
-    },
-    {
-      "themeId": "xecpro-ember",
-      "name": "琥珀",
-      "author": "XECKernelPro",
-      "version": "1.0",
-      "versionCode": 1,
-      "summary": "琥珀示例主题：暖橙强调色，暗色暖黑底像灯下的木桌，亮色是米白纸感。",
-      "description": "示例主题之四。整包主题：配色 + 明暗两张背景。\n· 暗色：暖黑底 + 琥珀橙强调；\n· 亮色：米白底 + 赤陶强调；\n· 圆角与玻璃居中，暖色页面更\"重\"。",
-      "size": 2110,
-      "sha256": "e70c8b2afdcae54a8f7db76d9cc69cc09875b82f0c7288d6562eb0908ac7195c",
-      "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.xectheme",
-      "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg",
-      "previews": [
-        "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg"
-      ],
-      "updatedAt": "2026-10-26T00:00:00Z",
-      "publishedAt": "2026-10-26T00:00:00Z",
-      "category": "theme",
-      "elements": [
-        "colors",
-        "wallpaper"
-      ],
-      "tags": [
-        "示例",
-        "暖色",
-        "高对比"
-      ],
-      "screenshots": [],
-      "types": [
-        "colors"
-      ],
-      "featured": true,
-      "downloads": 0,
-      "rating": 0.0,
-      "ratingCount": 0,
-      "priceCents": 0,
-      "changelog": "首次上架：琥珀橙整套令牌 + 明暗双背景。",
-      "minManagerVersion": 0,
-      "bannerUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg",
-      "colors": {
-        "accent": "#FF8A4C",
-        "backdropDark": "#140F0D",
-        "backdropLight": "#FFF7F1"
-      }
-    },
-    {
-      "themeId": "xecpro-mono",
-      "name": "墨白",
-      "author": "XECKernelPro",
-      "version": "1.0",
-      "versionCode": 1,
-      "summary": "墨白示例主题：纯灰阶无彩色主题，靠形状和留白拉开层次，不抢任何内容色。",
-      "description": "示例主题之五。整包主题：配色 + 明暗两张背景。\n· 暗色：近黑底 + 浅灰强调；\n· 亮色：纸白底 + 墨黑强调；\n· 全套中性色，适合配截图/看文字。",
-      "size": 2031,
-      "sha256": "51f4d1358f7e836219e9b6fe25f38931c5a3a4abcd75cedb235f42268ab326d3",
-      "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.xectheme",
-      "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.preview.jpg",
-      "previews": [
-        "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.preview.jpg"
-      ],
-      "updatedAt": "2026-10-26T00:00:00Z",
-      "publishedAt": "2026-10-26T00:00:00Z",
-      "category": "theme",
-      "elements": [
-        "colors",
-        "wallpaper"
-      ],
-      "tags": [
-        "示例",
-        "无彩色",
-        "极简"
-      ],
-      "screenshots": [],
-      "types": [
-        "colors"
-      ],
-      "featured": false,
-      "downloads": 0,
-      "rating": 0.0,
-      "ratingCount": 0,
-      "priceCents": 0,
-      "changelog": "首次上架：灰阶整套令牌 + 明暗双背景。",
-      "minManagerVersion": 0,
-      "bannerUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.preview.jpg",
-      "colors": {
-        "accent": "#D8D8DC",
-        "backdropDark": "#0A0A0B",
-        "backdropLight": "#FAFAFA"
-      }
-    },
-    {
-      "themeId": "xecpro-aurora",
-      "name": "极光示例主题",
-      "author": "XECKernelPro",
-      "version": "1.0",
-      "versionCode": 1,
-      "summary": "示例/模板主题：青绿极光配色，用来验证主题商城与换肤链路是通的。",
-      "description": "这是主题仓库自带的示例主题，可以直接照这个结构改成你自己的：\n1) 在管理器「主题编辑器」里改配色/背景，保存；\n2) 导出 .xectheme；\n3) 到主题仓库开 issue 提交直链。",
-      "size": 1095,
-      "sha256": "8bba21976da6f7d24fcd6792acbe1113cd49a5c7a005eaec076a31543b9d0aba",
-      "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.xectheme",
-      "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/samples/xecpro-aurora-1.preview.jpg",
-      "previews": [
-        "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/samples/xecpro-aurora-1.preview.jpg"
-      ],
-      "updatedAt": "2026-10-15T00:00:00Z",
-      "publishedAt": "2026-10-15T00:00:00Z",
-      "category": "colors",
-      "elements": [
-        "colors"
-      ],
-      "tags": [],
-      "screenshots": [],
-      "types": [
-        "colors"
-      ],
-      "featured": false,
-      "downloads": 0,
-      "rating": 0.0,
-      "ratingCount": 0,
-      "priceCents": 0,
-      "changelog": "",
-      "minManagerVersion": 0,
-      "bannerUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/samples/xecpro-aurora-1.preview.jpg",
-      "colors": {
-        "accent": "#2BE3A4",
-        "backdropDark": "#04100C",
-        "backdropLight": "#F1F7F5"
-      }
-    }
-  ]
-}
+    "featured": false
+  }
+]
