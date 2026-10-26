@@ -11,7 +11,8 @@ build_index.read_theme_json：必须是 zip、≤24MB、条目 ≤24、不许有
 不许有 `..`/绝对路径、theme.json 合法且 id/name/version/versionCode 齐备。
 
 另外两件事：把包里的 preview.jpg 单独抽出来当作卡片预览（管理器不下载整包就能画卡片），
-以及给 issue 回一条"怎么装"的说明。
+以及给 issue 回一条"怎么装"的说明。重建出来的 themes.json 是 schema 3（v3 对象形态），
+预览图落盘名 `<id>-<versionCode>.preview.jpg` 正好能被 build_index 的预览扫描认出来。
 """
 import base64
 import hashlib
@@ -31,6 +32,14 @@ from build_index import (API, ID_RE, REPO, ROOT, TOKEN, api, download,  # noqa: 
 
 UA = 'xeckernelpro-themerepo'
 PREVIEW_NAMES = ('preview.jpg', 'preview.jpeg', 'preview.png', 'preview.webp')
+USAGE = """用法：
+  python3 scripts/accept_theme.py --help
+  INPUT_URL=<.xectheme 直链> [INPUT_ID=<期望 id>] python3 scripts/accept_theme.py
+  ISSUE_NUMBER=<编号> ISSUE_BODY=<issue 模板正文> python3 scripts/accept_theme.py
+
+收货后依次：校验包 → 写入 themes/<id>/<id>-<versionCode>.xectheme →
+抽 preview 到同目录 → 更新 hosted.json → 调 build_index.py 重建 schema 3 索引。
+"""
 
 
 def fail(message):
@@ -130,8 +139,8 @@ def update_hosted(theme_id, rel, version_code, sha, size):
     themes = [t for t in hosted.get('themes', []) if t.get('id') != theme_id]
     themes.append(entry)
     hosted['themes'] = sorted(themes, key=lambda t: t['id'])
-    (ROOT / 'hosted.json').write_text(
-        json.dumps(hosted, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    (ROOT / 'hosted.json').write_bytes(
+        (json.dumps(hosted, ensure_ascii=False, indent=2) + '\n').encode('utf-8'))
     print('hosted.json updated')
 
 
@@ -161,6 +170,9 @@ def store_theme(blob, expect_id=''):
 
 
 def main():
+    if '--help' in sys.argv or '-h' in sys.argv:
+        print(USAGE)
+        return 0
     fields = parse_issue_body(os.environ.get('ISSUE_BODY', ''))
     url = (os.environ.get('INPUT_URL') or pick(fields, '直链', 'url', 'URL', '链接')).strip()
     wanted_id = (os.environ.get('INPUT_ID') or pick(fields, 'ID', 'id')).strip()
