@@ -118,7 +118,14 @@
       "size": 1077,
       "status": "accepted",
       "themeId": "xecpro-ember"
+    },
+    "1793208155339_xecpro-aurora-1.xectheme": {
+      "at": 1793220010,
+      "sha256": "83d4abc72a076385be3c924004bf96565b27b9c92bcbe9bac02c9923f0250800",
+      "size": 1120,
+      "status": "accepted",
+      "themeId": "xecpro-aurora"
     }
   },
-  "updatedAt": 1793202576
+  "updatedAt": 1793220010
 }
