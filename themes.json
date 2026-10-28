@@ -1,17 +1,11 @@
 {
   "schema": 3,
-  "generatedAt": "2026-10-28T08:53:37Z",
+  "generatedAt": "2026-10-28T13:08:56Z",
   "banners": [
     {
       "imageUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg",
       "themeId": "xecpro-celadon",
       "title": "青瓷",
-      "subtitle": "XECKernelPro"
-    },
-    {
-      "imageUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg",
-      "themeId": "xecpro-ember",
-      "title": "琥珀",
       "subtitle": "XECKernelPro"
     }
   ],
@@ -22,7 +16,6 @@
       "themeIds": [
         "xecpro-aurora",
         "xecpro-celadon",
-        "xecpro-ember",
         "xecpro-mono"
       ]
     }
@@ -43,7 +36,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg"
       ],
-      "updatedAt": "2026-10-28T08:53:37Z",
+      "updatedAt": "2026-10-28T13:08:56Z",
       "publishedAt": "2026-10-15T00:00:00Z",
       "category": "colors",
       "elements": [
@@ -83,7 +76,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg"
       ],
-      "updatedAt": "2026-10-28T08:53:37Z",
+      "updatedAt": "2026-10-28T13:08:56Z",
       "publishedAt": "2026-10-26T00:00:00Z",
       "category": "theme",
       "elements": [
@@ -114,51 +107,6 @@
       }
     },
     {
-      "themeId": "xecpro-ember",
-      "name": "琥珀",
-      "author": "XECKernelPro",
-      "version": "1.0",
-      "versionCode": 1,
-      "summary": "琥珀示例主题：暖橙强调色，暗色暖黑底像灯下的木桌，亮色是米白纸感。",
-      "description": "示例主题之四。整包主题：配色 + 明暗两张背景。\n· 暗色：暖黑底 + 琥珀橙强调；\n· 亮色：米白底 + 赤陶强调；\n· 圆角与玻璃居中，暖色页面更\"重\"。",
-      "size": 2110,
-      "sha256": "e70c8b2afdcae54a8f7db76d9cc69cc09875b82f0c7288d6562eb0908ac7195c",
-      "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.xectheme",
-      "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg",
-      "previews": [
-        "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg"
-      ],
-      "updatedAt": "2026-10-28T08:53:37Z",
-      "publishedAt": "2026-10-26T00:00:00Z",
-      "category": "theme",
-      "elements": [
-        "colors",
-        "wallpaper"
-      ],
-      "tags": [
-        "示例",
-        "暖色",
-        "高对比"
-      ],
-      "screenshots": [],
-      "types": [
-        "colors"
-      ],
-      "featured": true,
-      "downloads": 0,
-      "rating": 0.0,
-      "ratingCount": 0,
-      "priceCents": 0,
-      "changelog": "首次上架：琥珀橙整套令牌 + 明暗双背景。",
-      "minManagerVersion": 0,
-      "bannerUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg",
-      "colors": {
-        "accent": "#FF8A4C",
-        "backdropDark": "#140F0D",
-        "backdropLight": "#FFF7F1"
-      }
-    },
-    {
       "themeId": "xecpro-mono",
       "name": "墨白",
       "author": "XECKernelPro",
@@ -173,7 +121,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.preview.jpg"
       ],
-      "updatedAt": "2026-10-28T08:53:37Z",
+      "updatedAt": "2026-10-28T13:08:56Z",
       "publishedAt": "2026-10-26T00:00:00Z",
       "category": "theme",
       "elements": [
