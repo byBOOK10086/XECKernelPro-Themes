@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "generatedAt": "2026-10-28T15:49:38Z",
+  "generatedAt": "2026-10-28T20:40:10Z",
   "banners": [
     {
       "imageUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg",
@@ -20,6 +20,7 @@
       "id": "latest",
       "title": "最新上架",
       "themeIds": [
+        "xecpro-aurora",
         "xecpro-celadon",
         "xecpro-ember",
         "xecpro-mono"
@@ -27,6 +28,46 @@
     }
   ],
   "themes": [
+    {
+      "themeId": "xecpro-aurora",
+      "name": "极光示例主题",
+      "author": "XECKernelPro",
+      "version": "1.0",
+      "versionCode": 1,
+      "summary": "示例/模板主题：青绿极光配色，用来验证主题商城与换肤链路是通的。",
+      "description": "这是主题仓库自带的示例主题，可以直接照这个结构改成你自己的：\n1) 在管理器「主题编辑器」里改配色/背景，保存；\n2) 导出 .xectheme；\n3) 到主题仓库开 issue 提交直链。",
+      "size": 1120,
+      "sha256": "83d4abc72a076385be3c924004bf96565b27b9c92bcbe9bac02c9923f0250800",
+      "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.xectheme",
+      "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg",
+      "previews": [
+        "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg"
+      ],
+      "updatedAt": "2026-10-28T20:40:10Z",
+      "publishedAt": "2026-10-15T00:00:00Z",
+      "category": "colors",
+      "elements": [
+        "colors"
+      ],
+      "tags": [],
+      "screenshots": [],
+      "types": [
+        "colors"
+      ],
+      "featured": false,
+      "downloads": 0,
+      "rating": 0.0,
+      "ratingCount": 0,
+      "priceCents": 0,
+      "changelog": "",
+      "minManagerVersion": 0,
+      "bannerUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg",
+      "colors": {
+        "accent": "#FF2BE3A4",
+        "backdropDark": "#FF04100C",
+        "backdropLight": "#FFF1F7F5"
+      }
+    },
     {
       "themeId": "xecpro-celadon",
       "name": "青瓷",
@@ -42,7 +83,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg"
       ],
-      "updatedAt": "2026-10-28T15:49:38Z",
+      "updatedAt": "2026-10-28T20:40:10Z",
       "publishedAt": "2026-10-26T00:00:00Z",
       "category": "theme",
       "elements": [
@@ -87,7 +128,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg"
       ],
-      "updatedAt": "2026-10-28T15:49:38Z",
+      "updatedAt": "2026-10-28T20:40:10Z",
       "publishedAt": "2026-10-26T00:00:00Z",
       "category": "colors",
       "elements": [
@@ -127,7 +168,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.preview.jpg"
       ],
-      "updatedAt": "2026-10-28T15:49:38Z",
+      "updatedAt": "2026-10-28T20:40:10Z",
       "publishedAt": "2026-10-26T00:00:00Z",
       "category": "theme",
       "elements": [
