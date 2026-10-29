@@ -4,7 +4,7 @@
       "id": "xecpro-aurora",
       "path": "themes/xecpro-aurora/xecpro-aurora-1.xectheme",
       "versionCode": 1,
-      "sha256": "83d4abc72a076385be3c924004bf96565b27b9c92bcbe9bac02c9923f0250800",
+      "sha256": "7b99464e4f532633a05c643fa5460da5fb34a16b242adc675b73250a9470bca3",
       "size": 1120
     },
     {
@@ -25,8 +25,8 @@
       "id": "xecpro-mono",
       "path": "themes/xecpro-mono/xecpro-mono-1.xectheme",
       "versionCode": 1,
-      "sha256": "51f4d1358f7e836219e9b6fe25f38931c5a3a4abcd75cedb235f42268ab326d3",
-      "size": 2031
+      "sha256": "6123eda684bd9a919c1cb92661844ca88494a72ec484601c0ddc46ebd88acf51",
+      "size": 1107
     }
   ]
 }

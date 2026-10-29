@@ -125,7 +125,21 @@
       "size": 1120,
       "status": "accepted",
       "themeId": "xecpro-aurora"
+    },
+    "1793250768304_xecpro-aurora-1.xectheme": {
+      "at": 1793254877,
+      "sha256": "7b99464e4f532633a05c643fa5460da5fb34a16b242adc675b73250a9470bca3",
+      "size": 1120,
+      "status": "accepted",
+      "themeId": "xecpro-aurora"
+    },
+    "1793250788808_xecpro-mono-1.xectheme": {
+      "at": 1793254881,
+      "sha256": "6123eda684bd9a919c1cb92661844ca88494a72ec484601c0ddc46ebd88acf51",
+      "size": 1107,
+      "status": "accepted",
+      "themeId": "xecpro-mono"
     }
   },
-  "updatedAt": 1793233616
+  "updatedAt": 1793254881
 }
