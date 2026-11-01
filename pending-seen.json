@@ -139,7 +139,14 @@
       "size": 1107,
       "status": "accepted",
       "themeId": "xecpro-mono"
+    },
+    "1793521454590_xecpro-ember-1.xectheme": {
+      "at": 1793526269,
+      "sha256": "b4a1ab5871dd2fec5f017b362f9c5f7c9799dcd3a5fc486d67e4118a69575d51",
+      "size": 1077,
+      "status": "accepted",
+      "themeId": "xecpro-ember"
     }
   },
-  "updatedAt": 1793500628
+  "updatedAt": 1793526269
 }
