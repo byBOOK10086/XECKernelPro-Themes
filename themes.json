@@ -1,6 +1,6 @@
 {
   "schema": 3,
-  "generatedAt": "2026-11-15T21:17:50Z",
+  "generatedAt": "2026-11-16T01:10:23Z",
   "banners": [
     {
       "imageUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg",
@@ -22,7 +22,8 @@
       "themeIds": [
         "xecpro-aurora",
         "xecpro-celadon",
-        "xecpro-ember"
+        "xecpro-ember",
+        "xecpro-mono"
       ]
     }
   ],
@@ -42,7 +43,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-aurora/xecpro-aurora-1.preview.jpg"
       ],
-      "updatedAt": "2026-11-15T21:17:50Z",
+      "updatedAt": "2026-11-16T01:10:23Z",
       "publishedAt": "2026-10-15T00:00:00Z",
       "category": "colors",
       "elements": [
@@ -82,7 +83,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-celadon/xecpro-celadon-1.preview.jpg"
       ],
-      "updatedAt": "2026-11-15T21:17:50Z",
+      "updatedAt": "2026-11-16T01:10:23Z",
       "publishedAt": "2026-10-26T00:00:00Z",
       "category": "theme",
       "elements": [
@@ -127,7 +128,7 @@
       "previews": [
         "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-ember/xecpro-ember-1.preview.jpg"
       ],
-      "updatedAt": "2026-11-15T21:17:50Z",
+      "updatedAt": "2026-11-16T01:10:23Z",
       "publishedAt": "2026-10-26T00:00:00Z",
       "category": "colors",
       "elements": [
@@ -150,6 +151,46 @@
         "accent": "#FFFF8A4C",
         "backdropDark": "#FF140F0D",
         "backdropLight": "#FFFFF7F1"
+      }
+    },
+    {
+      "themeId": "xecpro-mono",
+      "name": "墨白",
+      "author": "XECKernelPro",
+      "version": "1.0",
+      "versionCode": 1,
+      "summary": "墨白示例主题：纯灰阶无彩色主题，靠形状和留白拉开层次，不抢任何内容色。",
+      "description": "示例主题之五。整包主题：配色 + 明暗两张背景。\n· 暗色：近黑底 + 浅灰强调；\n· 亮色：纸白底 + 墨黑强调；\n· 全套中性色，适合配截图/看文字。",
+      "size": 1107,
+      "sha256": "fc15b6148da3540c3d233b9d0b1cd4fd0fead19d5f2e146756be9f6e20d0200a",
+      "downloadUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.xectheme",
+      "previewUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.preview.jpg",
+      "previews": [
+        "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.preview.jpg"
+      ],
+      "updatedAt": "2026-11-16T01:10:23Z",
+      "publishedAt": "2026-10-26T00:00:00Z",
+      "category": "colors",
+      "elements": [
+        "colors"
+      ],
+      "tags": [],
+      "screenshots": [],
+      "types": [
+        "colors"
+      ],
+      "featured": false,
+      "downloads": 0,
+      "rating": 0.0,
+      "ratingCount": 0,
+      "priceCents": 0,
+      "changelog": "",
+      "minManagerVersion": 0,
+      "bannerUrl": "https://cdn.jsdelivr.net/gh/byBOOK10086/XECKernelPro-Themes@main/themes/xecpro-mono/xecpro-mono-1.preview.jpg",
+      "colors": {
+        "accent": "#FFD8D8DC",
+        "backdropDark": "#FF0A0A0B",
+        "backdropLight": "#FFFAFAFA"
       }
     }
   ]
