@@ -153,7 +153,21 @@
       "size": 1107,
       "status": "accepted",
       "themeId": "xecpro-mono"
+    },
+    "1794912087239_xecpro-ember-1.xectheme": {
+      "at": 1794943527,
+      "sha256": "fad79ff0345bc7409b9eb53a5a260ef4cc551b7db7b9f04324c1fadf06bda061",
+      "size": 1077,
+      "status": "accepted",
+      "themeId": "xecpro-ember"
+    },
+    "1794912120620_xecpro-celadon-1.xectheme": {
+      "at": 1794943531,
+      "sha256": "d20f773d23a97bdb66949534b20ff5785ad9272570854dd5e42226a6c3618fd4",
+      "size": 1160,
+      "status": "accepted",
+      "themeId": "xecpro-celadon"
     }
   },
-  "updatedAt": 1794911959
+  "updatedAt": 1794943531
 }
